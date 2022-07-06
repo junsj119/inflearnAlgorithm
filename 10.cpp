@@ -20,6 +20,10 @@ int digit_sum(int x) {
 		x = x / 10;
 	}
 }
+x	tmp	  sum
+125  5     5
+12   2     7
+1    1     8
 */
 int main()
 {
