@@ -18,18 +18,19 @@ int main()
 	cin >> str;
 	for (int i = 0; i < str.length(); i++) {
 		if (isupper(str[i]))
-			a[str[i] - 65];
+			a[str[i] - 65]++;
 		else
-			a[str[i] - 97 - 26];		//0~25 대문자 26~ 소문자
+			a[str[i] - 97 + 26]++;		//0~25 대문자 26~ 소문자
 	}
 
 	cin >> str;
 	for (int i = 0; i < str.length(); i++) {
 		if (isupper(str[i]))
-			b[str[i] - 65];
+			b[str[i] - 65]++;
 		else
-			b[str[i] - 97 - 26];		//0~25 대문자 26~ 소문자
+			b[str[i] - 97 + 26]++;		//0~25 대문자 26~ 소문자
 	}
+
 	for (int i = 0; i < 52; i++) {
 		if (a[i] != b[i]) {
 			cout << "NO";

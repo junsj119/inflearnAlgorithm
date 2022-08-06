@@ -4,8 +4,6 @@
 #include<algorithm>
 using namespace std;
 
-
-
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -26,9 +24,9 @@ int main()
 				vec2[i]++;
 		}
 	}
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 		cout << vec2[i] << " ";
-	}
+
 	
 
 

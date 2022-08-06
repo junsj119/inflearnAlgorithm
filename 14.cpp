@@ -4,7 +4,6 @@
 using namespace std;
 //뒤집는 함수
 int reverse(int x) {
-	/*
 	string s = to_string(x);
 	reverse(s.begin(), s.end());
 
@@ -17,7 +16,7 @@ int reverse(int x) {
 		i++;
 	}
 	return stoi(s);
-	*/
+	/*
 	int res = 0, tmp;
 	while (x > 0) {
 		tmp = x % 10;
@@ -25,6 +24,7 @@ int reverse(int x) {
 		x = x / 10;
 	}
 	return res;
+		*/
 }
 //소수인지 확인하는 함수
 bool isPrime(int x) {

@@ -1,4 +1,4 @@
-//11. 숫자의 총 개수
+//11. 숫자의 총 개수(small)
 #include<iostream>
 using namespace std;
 

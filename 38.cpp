@@ -19,11 +19,11 @@ int main()
 
 	for (int i = n-1; i >= 0; i--) {
 		int tmp = i;
-		for (int j = 1; j <= is[i]; j++) {
+		for (int j = 1; j <= is[i]; j++) {		//앞에 큰 수가 있는 만큼 반복을 하면서 앞으로 끍어 온다.
 			os[tmp] = os[tmp + 1];
 			tmp++;
 		}
-		os[tmp] = i+1;
+		os[tmp] = i+1;		// 그 후 마지막에 i+1 한 값을 os[tmp]에 넣어준다.
 	}
 	
 	for (int i = 0; i < n; i++)

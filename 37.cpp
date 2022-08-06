@@ -19,7 +19,7 @@ int main()
 		int pos = -1;
 		for (int j = 0; j < s; j++) {
 			if (C[j] == a)
-				pos = j;
+				pos = j;		//입력값이 들어오면 중복이 되는지 쭉 훑어본다. 중복이 되면 몇번째 index가 중복이 됐는지 pos에 답는다.
 		}
 
 		//중복 되었을 때
