@@ -1,0 +1,191 @@
+1978 Find decimal places
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int ans = 0;
+    
+    for(int i = 0; i < n; i++){
+        int m;
+        cin >> m;
+  
+        int cnt = 0;
+        for(int i=1; i<=m; i++){
+            if(m%i==0)
+                cnt++;      
+        }
+        if(cnt==2)
+            ans++;
+    }
+    cout << ans;
+    return 0;
+}
+
+
+===============================================================
+
+1929 소수구하기 시간초과코드
+#include<iostream>
+using namespace std;
+
+int m, n; // 3, 16
+int i, j;
+
+cin >> m >> n;
+int main(){
+    for (i = m; i <= n; i++) {
+        int cnt = 0;
+        
+		for (j = 2; j < i; j++) {
+			if (i % j == 0)
+				break;
+		}
+        if(j == i)
+            cout << j << "\n";
+	}
+}
+
+===============================================================
+
+1929 소수구하기 통과코드
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+int main() {
+    int m, n;
+    cin >> m >> n;
+    
+    vector<int> arr(n + 1, 0);
+
+    for(int i = 2; i <= n; i++)
+        arr[i] = i;
+
+    for(int i = 2; i * i <= n; i++) {
+        if(arr[i] == 0)
+            continue;
+        for(int j = 2 * i; j <= n; j += i) {
+            if(arr[j] == 0)  
+                continue;
+            else 
+                arr[j] = 0;
+        }
+    }
+
+    for(int i = m; i <= n; i++) {
+        if(arr[i] != 0) 
+            printf("%d\n", arr[i]);
+    }
+    return 0;
+}
+
+===============================================================
+
+1541 잃어버린 괄호 
+#include <iostream> 
+#include <string>
+using namespace std; 
+
+int main()
+{ 
+	string str; //입력한 문자열과 부호
+	cin >> str;
+	string temp = "";
+	int result = 0;
+
+	bool minus = false;
+
+	for (int i = 0; i < str.size() + 1; i++)
+	{
+		if (str[i] == '+' || str[i] == '-'|| str[i] == '\0')
+		{
+
+			if (minus == true)
+			{
+				result -= stoi(temp);
+			}
+			else if (minus == false)
+			{
+				result += stoi(temp);
+			}
+			temp = "";
+			if (str[i] == '-')
+			{
+				minus = true;
+			}
+		}
+		else
+		{
+			temp += str[i];
+		}
+	}
+	cout << result;
+
+}
+
+===============================================================
+1934 최소공배수
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    
+    for(int i = 0; i < n; i++){
+        int x, y;
+        cin >> x >> y;
+        
+        for (int j = x; j > 0; j--) {
+			if (x%j == 0 && y%j==0) {
+				cout << x * (y / j) << "\n";
+				break;
+			}
+		}
+    }
+   
+    return 0;
+}
+
+===========================================================
+얘는 그냥 최대공약수
+
+int gcd(int a, int b)
+{
+	int c;
+	while (b != 0)
+	{
+		c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
+int lcm(int a, b)
+{
+    return a * b / gcd(a, b);
+}
+
+===========================================================
+2455 지능형 기차
+#include<iostream>
+using namespace std;
+
+int main(){
+    int sum = 0, max = 0;
+    
+    for(int i = 0; i < 4; i++){
+        int x, y;
+        cin >> x >> y;
+        
+        sum += y;
+        sum -= x;
+        
+        if (sum > max)
+            max = sum;    
+    }
+    cout << max;
+    return 0;
+}
